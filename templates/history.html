@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table border="1" width="800">
+        <tr>
+            <th>STOCK SYMBOL</th>
+            <th>METHOD</th>
+            <th>STOCK PRICE</th>
+            <th>STOCK AMOUNT</th>
+            <th>DATE AND TIME</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.method }}</td>
+            <td>{{ row.price }}</td>
+            <td>{{ row.amount }}</td>
+            <td>{{ row.dateandtime }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

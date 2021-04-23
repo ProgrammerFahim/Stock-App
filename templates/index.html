@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table border="1" width="800">
+        <tr>
+            <th>STOCK SYMBOL</th>
+            <th>STOCK PRICE</th>
+            <th>STOCK AMOUNT</th>
+            <th>STOCK WORTH</th>
+        </tr>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.current_price }}</td>
+            <td>{{ stock.amount }}</td>
+            <td>{{ stock.current_worth }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3">Grand Total</td>
+            <td>{{ total }}</td>
+        </tr>
+    </table>
+{% endblock %}
